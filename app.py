@@ -10,6 +10,3 @@ def embed():
     data = request.get_json()
     vector = model.encode(data["text"], normalize_embeddings=True).tolist()
     return jsonify({"embedding": vector})
-
-if __name__ == "__main__":
-    app.run(port=5001)
